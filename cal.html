@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.calculator {
+			width: 200px;
+			margin: 0 auto;
+		}
+		input[type="number"] {
+			width: 100%;
+		}
+		button {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="calculator">
+		<input type="number" id="num1" placeholder="Enter first number"><br>
+		<input type="number" id="num2" placeholder="Enter second number"><br>
+		<button onclick="calculateSum()">Add</button><br>
+		<button onclick="calculateSubtraction()">Subtract</button><br>
+		<button onclick="calculateMultiplication()">Multiply</button><br>
+		<button onclick="calculateDivision()">Divide</button><br>
+		<p id="result"></p>
+	</div>
+	<script>
+		function calculateSum() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			var result = num1 + num2;
+			document.getElementById("result").innerHTML = "Result: " + result;
+		}
+		function calculateSubtraction() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			var result = num1 - num2;
+			document.getElementById("result").innerHTML = "Result: " + result;
+		}
+		function calculateMultiplication() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			var result = num1 * num2;
+			document.getElementById("result").innerHTML = "Result: " + result;
+		}
+		function calculateDivision() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			if (num2 === 0) {
+				document.getElementById("result").innerHTML = "Error: Division by zero is not allowed.";
+			} else {
+				var result = num1 / num2;
+				document.getElementById("result").innerHTML = "Result: " + result;
+			}
+		}
+	</script>
+</body>
+</html>
